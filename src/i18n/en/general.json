@@ -1,0 +1,177 @@
+{
+  "brand": {
+    "name": "tuktukwan",
+    "thai": "ทุกๆวัน",
+    "logoAlt": "tuktukwan logo"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Can't reach the server. Check your connection and try again."
+  },
+  "auth": {
+    "serverError": "Something went wrong on our side. Please try again.",
+    "invalidRequest": "Something went wrong. Please try again.",
+    "noSession": "You're not signed in.",
+    "cannotRemoveLastLoginMethod": "This is your only way to sign in. Link another account before unlinking it.",
+    "providerNotLinked": "That account isn't linked anymore."
+  },
+  "providers": {
+    "line": "LINE",
+    "google": "Google",
+    "microsoft": "Microsoft",
+    "github": "GitHub",
+    "dev": "Dev account"
+  },
+  "landing": {
+    "signIn": "Sign in",
+    "register": "Register",
+    "heroBody": "Learn to read Thai a little every day. Start with the 44 consonants, each with the word it's named after, and build from there.",
+    "join": "Join now!",
+    "infoTitle": "What is tuktukwan?",
+    "infoBody": "ทุกๆวัน (túk túk wan) means “every day”. tuktukwan is a small place to practise the Thai script in short daily sessions: the alphabet first, then vowels and easy words."
+  },
+  "signin": {
+    "title": {
+      "signin": "Sign in!",
+      "register": "Sign up!",
+      "link": "Link your account!"
+    },
+    "body": "Authenticate using the third-party apps you already trust. No private data or passwords are saved on tuktukwan.",
+    "action": {
+      "signin": "Sign in with {{provider}}",
+      "register": "Register using {{provider}}",
+      "link": "Link to {{provider}}"
+    },
+    "close": "Close",
+    "loadingProviders": "Loading sign-in options…",
+    "noProviders": "Signing in isn't available right now.",
+    "allLinked": "Every available account is already linked.",
+    "redirecting": "Redirecting, please wait...",
+    "redirectingHint": "If nothing happens, reload the page, or close this dialog to cancel.",
+    "errors": {
+      "unknown_provider": "That sign-in option isn't available.",
+      "invalid_request": "Something went wrong signing in. Please try again.",
+      "invalid_state": "That sign-in took too long or was already used. Please try again.",
+      "denied": "Signing in was cancelled.",
+      "exchange_failed": "We couldn't verify your account with the provider. Please try again.",
+      "server_error": "Something went wrong on our side. Please try again.",
+      "signup_expired": "Your signup timed out. Sign in again to finish creating your account."
+    }
+  },
+  "signup": {
+    "title": "Create your account",
+    "intro": "You signed in with {{provider}}. Choose how you'll appear on tuktukwan to finish.",
+    "username": {
+      "label": "Username",
+      "placeholder": "e.g. yaksha",
+      "length": "Username must be 3 to 32 characters.",
+      "format": "Username can only use letters, numbers, dots, dashes and underscores.",
+      "taken": "That username is already taken."
+    },
+    "displayName": {
+      "label": "Display name",
+      "placeholder": "e.g. Alex Doe",
+      "length": "Display name must be 3 to 64 characters."
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "email@example.com",
+      "invalid": "Enter a valid email address.",
+      "taken": "That email is already in use."
+    },
+    "terms": {
+      "accept": "I accept the",
+      "termsLink": "Terms of Service",
+      "privacyLink": "Privacy Policy",
+      "required": "Accept the Terms of Service and Privacy Policy to continue."
+    },
+    "identity": {
+      "linked": "This account was already used to sign up. Sign in instead."
+    },
+    "expired": "Your signup timed out. Sign in again to finish creating your account.",
+    "create": "Create account",
+    "creating": "Creating…",
+    "cancel": "Cancel"
+  },
+  "nav": {
+    "home": "Home",
+    "learn": "Learn",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Log out",
+    "menu": "Account menu"
+  },
+  "home": {
+    "greeting": "สวัสดี, {{name}}!",
+    "lessons": "Lessons",
+    "consonants": "Consonants",
+    "consonantsBody": "The 44 letters of the Thai alphabet.",
+    "vowels": "Vowels",
+    "words": "Easy words",
+    "comingSoon": "Coming soon"
+  },
+  "learn": {
+    "title": "Consonants",
+    "intro": "Each consonant has a tone class and is named after a word that starts with it, like ก ไก่ (gɔɔ gài, chicken).",
+    "class": {
+      "HIGH": "High class",
+      "MID": "Mid class",
+      "LOW_PAIRED": "Low class, paired",
+      "LOW_UNPAIRED": "Low class, unpaired"
+    },
+    "initial": "Initial",
+    "final": "Final",
+    "silent": "silent",
+    "none": "none",
+    "obsolete": "Obsolete",
+    "loadError": "Couldn't load the consonants."
+  },
+  "profile": {
+    "memberSince": "Member since {{date}}",
+    "edit": "Edit",
+    "linkedAccounts": "Linked accounts",
+    "linkNew": "Link new account",
+    "unlink": "Unlink",
+    "unlinkProvider": "Unlink {{provider}}",
+    "onlyAccount": "This is your only way to sign in, so it can't be unlinked.",
+    "linkedOn": "Linked {{date}}",
+    "confirmUnlink": {
+      "title": "Unlink {{provider}}?",
+      "body": "You won't be able to sign in with {{provider}} anymore.",
+      "confirm": "Unlink",
+      "cancel": "Keep it"
+    },
+    "link": {
+      "linked": "{{provider}} is now linked.",
+      "already_linked": "That {{provider}} account is already linked to a tuktukwan account.",
+      "link_failed": "Something went wrong linking {{provider}}. Please try again.",
+      "denied": "Linking {{provider}} was cancelled.",
+      "exchange_failed": "We couldn't verify your {{provider}} account. Please try again.",
+      "invalid_request": "Something went wrong linking {{provider}}. Please try again.",
+      "dismiss": "Dismiss"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "body": "There's nothing to change here yet."
+  },
+  "legal": {
+    "back": "Back",
+    "terms": {
+      "title": "Terms of Service",
+      "body": "The terms of service haven't been written yet."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "body": "tuktukwan stores your username, display name and email, and the name, email and picture each linked sign-in provider shares with it. Passwords are never seen or stored. A full privacy policy is still to be written."
+    }
+  },
+  "footer": {
+    "terms": "Terms",
+    "privacy": "Privacy"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "home": "Go home"
+  }
+}

@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hero: #2290ea;
+
+  --color-line: #06c755;
+  --color-google: #da483b;
+  --color-microsoft: #00aef0;
+  --color-github: #333333;
+
+  /* Raleway and Dosis have no Thai glyphs, so Thai text falls through to
+     Noto Sans Thai instead of whatever the system picks. */
+  --font-sans:
+    "Raleway", "Noto Sans Thai", ui-sans-serif, system-ui, sans-serif;
+  --font-logo: "Dosis", "Noto Sans Thai", ui-sans-serif, sans-serif;
+  --font-thai: "Noto Sans Thai", ui-sans-serif, sans-serif;
+
+  --animate-scale-in: scale-in 0.3s ease-out;
+  --animate-float-1: float-right 60s linear infinite;
+  --animate-float-2: float-right 70s linear infinite;
+  --animate-float-3: float-right 80s linear infinite;
+  --animate-float-4: float-right 90s linear infinite;
+  --animate-float-5: float-right 100s linear infinite;
+
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.4);
+    }
+    75% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float-right {
+    0% {
+      transform: translateX(-50vw);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(150vw);
+      opacity: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.2);
+}

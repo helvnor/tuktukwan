@@ -1,0 +1,13 @@
+allowBuilds:
+  '@swc/core': true
+  esbuild: true
+
+auditConfig:
+  ignoreGhsas:
+    # picomatch ReDoS (<=4.0.7). Only reached at build time through Vite and
+    # Tailwind's file globbing, never shipped to the browser, and no fixed
+    # release exists yet. Drop this once picomatch 4.0.8 is out.
+    - GHSA-fc5q-39xc-vjpf
+
+overrides:
+  '@graphql-tools/utils': ^12.0.3

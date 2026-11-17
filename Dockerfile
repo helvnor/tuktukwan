@@ -1,47 +1,19 @@
-FROM node:18-alpine AS base
-
-
-# Dependencies
-FROM base AS deps
-RUN apk add --no-cache libc6-compat
+FROM node:24-alpine AS builder
 WORKDIR /app
-
-COPY package.json yarn.lock ./
-RUN yarn --frozen-lockfile
-
-
-# Source code
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+RUN corepack enable
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install --frozen-lockfile
 COPY . .
-RUN yarn run build
+RUN pnpm build
 
-
-# Prod image
-FROM base AS runner
-WORKDIR /app
-
-ARG HOST_URL
-ARG SERVER_KEY
-
-ENV HOST_URL=$HOST_URL
-ENV SERVER_KEY=$SERVER_KEY
-
-ENV NODE_ENV production
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-COPY --from=builder /app/public ./public
-
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
-
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
-EXPOSE 80
-ENV PORT 80
-
-CMD ["node", "server.js"]
+FROM nginx:alpine
+RUN apk --no-cache upgrade \
+    && rm -rf /usr/share/nginx/html/* \
+    && rm -f /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx-main.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+USER 1000
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]

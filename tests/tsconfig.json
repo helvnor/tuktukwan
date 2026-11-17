@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "composite": false,
+    "types": ["vite/client", "vitest/globals"]
+  },
+  "include": ["**/*", "../vitest.setup.ts"],
+  "exclude": ["e2e"]
+}

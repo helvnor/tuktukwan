@@ -1,0 +1,27 @@
+name: Dependency security audit
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24.x
+          cache: pnpm
+      - name: Verify locked dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Reject high and critical vulnerabilities
+        run: pnpm audit --audit-level high
